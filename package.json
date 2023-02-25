@@ -71,7 +71,7 @@
         "test-ci": "concurrently \"pnpm:test-ci-*\"",
         "test-ci-karma": "cross-env NODE_ENV=test karma start ./karma.conf.cjs --auto-watch --single-run --coverage --grep",
         "test-ci-integration": "pnpm --filter \"./test/integration/**\" test",
-        "deploy": "pnpm build && pnpm pack && aws s3 cp chart.js-* s3://bpm-code --profile --acl public-read bpm && rm chart.js-*"
+        "deploy": "pnpm build && pnpm pack && aws s3 cp chart.js-* s3://bpm-code --acl public-read --profile  bpm && rm chart.js-*"
     },
     "dependencies": {
         "@kurkle/color": "^0.3.0"
